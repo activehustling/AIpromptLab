@@ -76,4 +76,4 @@ Significant changes may also be announced via our website or email communication
 
 If you have a question about this Security Policy or need to report a concern, please contact us:
 📧 **[security@promptifice.com](mailto:security@promptifice.com)**
-🌐 Website: [www.promptifice.com](https://www.promptifice.com) *(if applicable)*
+🌐 Website: [www.promptifice.com](https://promptifice.netlify.app) *(if applicable)*
