@@ -1,16 +1,54 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://promptifice.netlify.app/</loc>
-  <lastmod>2025-10-23T01:16:58+00:00</lastmod>
-</url>
-
-
-</urlset>
+    new Crawler({
+  appId: "MFPEBUWDNP",
+  indexPrefix: "",
+  rateLimit: 8,
+  maxUrls: 100,
+  schedule: "on the 11 day of the month",
+  startUrls: ["https://promptifice.netlify.app"],
+  sitemaps: [],
+  saveBackup: false,
+  ignoreQueryParams: ["source", "utm_*"],
+  actions: [
+    {
+      indexName: "promptifice_articles",
+      pathsToMatch: ["https://promptifice.netlify.app/**"],
+      recordExtractor: ({ url, $, helpers }) => {
+        return helpers.article({ $, url });
+      },
+    },
+    {
+      indexName: "promptifice_pages",
+      pathsToMatch: ["https://promptifice.netlify.app/**"],
+      recordExtractor: ({ url, $, helpers, contentLength, fileType }) => {
+        return helpers.page({ $, url, contentLength, fileType });
+      },
+    },
+  ],
+  initialIndexSettings: {
+    promptifice_articles: {
+      distinct: true,
+      attributeForDistinct: "url",
+      searchableAttributes: [
+        "unordered(keywords)",
+        "unordered(title)",
+        "unordered(description)",
+        "url",
+      ],
+      customRanking: ["asc(depth)"],
+      attributesForFaceting: ["category"],
+    },
+    promptifice_pages: {
+      distinct: true,
+      attributeForDistinct: "url",
+      searchableAttributes: [
+        "unordered(keywords)",
+        "unordered(title)",
+        "unordered(description)",
+        "url",
+      ],
+      customRanking: ["asc(depth)"],
+      attributesForFaceting: ["category"],
+    },
+  },
+  apiKey: "2ae1121d6933616d6af57b7c09ff6f03",
+});
