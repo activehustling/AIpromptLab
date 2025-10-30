@@ -33,12 +33,6 @@ Free HTML CSS Template
                     }
                 });
             
-function toggleDropdown(event) {
-  event.preventDefault();
-  const dropdown = event.target.parentElement;
-  dropdown.classList.toggle("active");
-}
-
             // Active menu highlighting
             const sections = document.querySelectorAll('section');
             const menuLinks = document.querySelectorAll('.nav-link');
@@ -133,3 +127,4 @@ function toggleDropdown(event) {
             }
 
         });
+
