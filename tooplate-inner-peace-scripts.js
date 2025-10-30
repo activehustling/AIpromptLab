@@ -32,7 +32,12 @@ Free HTML CSS Template
                         navLinksContainer.classList.remove('active');
                     }
                 });
-            });
+            
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = event.target.parentElement;
+  dropdown.classList.toggle("active");
+}
 
             // Active menu highlighting
             const sections = document.querySelectorAll('section');
@@ -126,4 +131,5 @@ Free HTML CSS Template
                     e.target.reset();
                 });
             }
+
         });
