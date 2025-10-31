@@ -53,3 +53,4 @@ new Crawler({
   apiKey: "2ae1121d6933616d6af57b7c09ff6f03",
   extraUrls: ["https://promptifice.netlify.app/about"],
 });
+
