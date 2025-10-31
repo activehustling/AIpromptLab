@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How to Create a Prompt? — PROMPTIFICE</title>
+  <meta name="description" content="Learn how to create effective AI prompts: practical prompt writing steps, templates, examples, and best practices for generating high-quality images, text, and media." />
+  <meta name="keywords" content="how to create a prompt, prompt engineering, AI prompts, prompt templates, generate images with prompts, prompt writing tips" />
+  <style>
+    :root{
+      --accent1:#1E3CFF;
+      --accent2:#00BFFF;
+      --bg:#ffffff;
+      --muted:#666;
+      --maxw:980px;
+    }
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#111; background:#fafafa; line-height:1.65;}
+    .header{background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; padding:14px 16px; box-shadow:0 4px 18px rgba(2,6,23,0.08);}
+    .container{max-width:var(--maxw); margin:0 auto; padding:18px;}
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{width:48px;height:48px;border-radius:8px;background:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent1);font-size:18px;}
+    .site-title{font-size:1.25rem;font-weight:700;letter-spacing:0.2px;}
+    .site-sub{font-size:0.85rem;opacity:0.95;margin-top:2px;}
+    nav{display:flex;align-items:center;justify-content:space-between;margin-top:12px;}
+    .nav-links{display:flex;gap:12px;list-style:none;padding:0;margin:0;}
+    .nav-links a{color:#fff;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:6px;transition:all .18s;}
+    .nav-links a:hover{background:rgba(255,255,255,0.12);}
+    .main{display:flex;gap:28px; margin-top:22px;}
+    .content{flex:1;background:var(--bg);padding:26px;border-radius:12px;box-shadow:0 6px 22px rgba(17,17,17,0.04);}
+    .post-title{font-size:1.9rem;margin:0 0 6px 0;}
+    .post-meta{color:var(--muted);font-size:0.95rem;margin-bottom:16px;}
+    .lead{font-size:1.05rem;color:#222;margin-bottom:18px;}
+    h2{margin-top:20px;color:#0b254f;}
+    h3{margin-top:16px;color:#0b254f;}
+    ul{margin-left:20px}
+    pre{background:#0f1724;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto;font-size:0.92rem}
+    .cta-links{margin-top:22px;padding-top:18px;border-top:1px dashed #eee;}
+    .related{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .related a{display:inline-block;padding:8px 12px;background:#f4f8ff;border-radius:8px;color:#064; text-decoration:none;border:1px solid #e6f0ff}
+    footer{text-align:center;color:var(--muted);font-size:0.9rem;padding:22px 0;margin-top:18px;}
+    /* Responsive */
+    @media (max-width:820px){
+      .main{flex-direction:column}
+      nav{flex-direction:column;align-items:flex-start;gap:10px}
+      .nav-links{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand" role="banner">
+        <div class="logo" aria-hidden="true">P</div>
+        <div>
+          <div class="site-title">PROMPTIFICE</div>
+          <div class="site-sub">Mastering The Arts of Prompts</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation" style="margin-top:12px;">
+        <ul class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="/index.html">Home</a></li>
+          <li role="none"><a role="menuitem" href="/about.html">About</a></li>
+          <li role="none"><a role="menuitem" href="/practices.html">Practices</a></li>
+          <li role="none"><a role="menuitem" href="/resources.html">Resources</a></li>
+          <li role="none"><a role="menuitem" href="/blog.html" aria-current="page">Blog</a></li>
+          <li role="none"><a role="menuitem" href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main" role="main">
+    <article class="content" itemscope itemtype="http://schema.org/Article">
+      <h1 class="post-title" itemprop="headline">How to create a prompt?</h1>
+      <div class="post-meta">Published: October 23, 2025 • Category: Prompt Engineering • Reading time: ~8–11 minutes</div>
+
+      <p class="lead">Creating a great AI prompt is part art, part technique. Whether your goal is to generate images, write persuasive text, produce music, or craft a video storyboard, a clear, well-structured prompt is the single factor that determines output quality. This guide shows step-by-step how to create effective prompts, practical templates you can reuse, and tips to iterate quickly.</p>
+
+      <h2>Why prompt quality matters</h2>
+      <p>AI models respond directly to the input you give. A short, vague instruction will give you a short, vague result. Conversely, a carefully written prompt steers the model toward the intended style, tone, detail, and constraints. Good prompts reduce time spent editing outputs, improve consistency, and scale your creative workflow.</p>
+
+      <h2>Core principles of an effective prompt</h2>
+      <p>Keep these principles top of mind as you write prompts:</p>
+      <ul>
+        <li><strong>Clarity:</strong> Be specific about what you want. Replace vague terms like “nice” with concrete adjectives such as “minimal, high contrast, flat-color illustration.”</li>
+        <li><strong>Context:</strong> Tell the model who it is or the role it should assume (“You are an expert prompt engineer,” “Act as a travel copywriter”).</li>
+        <li><strong>Constraints:</strong> Provide limits like aspect ratio, word count, file type, or style references (“16:9, cinematic, film grain”).</li>
+        <li><strong>Examples:</strong> When possible, include an example outcome or sample style to emulate.</li>
+        <li><strong>Iterate:</strong> Treat prompts as experiments — small adjustments often produce dramatically different outputs.</li>
+      </ul>
+
+      <h2>Step-by-step prompt creation process</h2>
+      <h3>1. Define the objective</h3>
+      <p>Start by answering: What is the desired output? Examples: a 4-line commercial tagline, a 1024×1024 fantasy landscape, a 30-second music loop, or a character sketch for a comic. The clearer the objective, the better the result.</p>
+
+      <h3>2. Set the role and tone</h3>
+      <p>Tell the model who it should be and the voice to adopt. Examples:</p>
+      <ul>
+        <li>“You are a seasoned art director.”</li>
+        <li>“Write as an engaging newsletter editor.”</li>
+        <li>“Act as an instructional designer for beginner AI artists.”</li>
+      </ul>
+
+      <h3>3. Give explicit instructions and constraints</h3>
+      <p>Include necessary constraints: length limits, file format suggestions, color palettes, technical terms, or composition rules. This helps rule out unwanted variants and keeps outputs usable.</p>
+
+      <h3>4. Include references and examples</h3>
+      <p>If you want a style similar to a well-known artist or a sample sentence, include a short reference. If legal concerns exist, use neutral style descriptors rather than copyrighted works—for example, “in the style of 90s retro synthwave” vs. naming a living artist.</p>
+
+      <h3>5. Add post-processing instructions</h3>
+      <p>Mention any follow-up operations like tone-check, word-limit, or export constraints. This is crucial when the output will be directly used in product copy, marketing, or image generation pipelines.</p>
+
+      <h2>Prompt templates you can reuse (practical)</h2>
+      <p>Below are versatile templates adapted to images, copywriting, and creative media:</p>
+
+      <h3>Image prompt template</h3>
+      <pre>
+Role: You are an expert concept artist.
+Subject: [describe main subject and action]
+Style: [e.g., cinematic, minimal, watercolor, photorealistic]
+Color & Lighting: [palette, time of day, light source]
+Composition & Details: [camera angle, focal length, key props]
+Constraints: [aspect ratio, size, file type]
+Output: A single short description suitable for an image generator.
+Example: (optional example outcome)
+</pre>
+
+      <h3>Text / marketing prompt template</h3>
+      <pre>
+Role: You are a persuasive copywriter.
+Goal: [e.g., describe product benefit in 40–60 words]
+Audience: [e.g., busy professionals, students]
+Tone: [e.g., friendly, authoritative, playful]
+Limitations: [word count, avoid jargon, include CTA]
+Call to action: [desired action]
+</pre>
+
+      <h3>Music / audio prompt template</h3>
+      <pre>
+Role: You are a composer for short-form media.
+Mood & Tempo: [e.g., uplifting, 90 BPM]
+Instrumentation: [e.g., synth pads, marimba, soft beat]
+Duration: [e.g., 15–45 seconds]
+Reference: [example sonic cues]
+Deliverable: Short loop suitable for background music
+</pre>
+
+      <h2>Examples — real prompts you can use now</h2>
+      <p>Here are practical prompt examples adapted from the templates above.</p>
+
+      <h3>Image example</h3>
+      <pre>
+You are an expert concept artist. Create a photorealistic 16:9 image of a small rooftop café at sunset in Lagos.
+Style: warm cinematic, shallow depth of field.
+Colors: golden hour, orange and teal.
+Details: string lights, a single customer reading, rain-wet tiles, soft bokeh.
+Constraints: 16:9, high detail, no text overlays.
+</pre>
+
+      <h3>Marketing example</h3>
+      <pre>
+You are a friendly email copywriter. Write a 45-word subject line and preview text promoting a free AI prompt workshop for beginners. Audience: creators in Africa. Tone: encouraging, clear. Include a short CTA that invites sign-up.
+</pre>
+
+      <h2>Testing and iteration best practices</h2>
+      <p>Don’t expect a perfect result on the first try. Use this workflow:</p>
+      <ol>
+        <li>Run the original prompt and save the output.</li>
+        <li>Identify what went wrong or what’s missing (style, detail, tone).</li>
+        <li>Tweak one variable at a time (e.g., add a lighting descriptor or change word count).</li>
+        <li>Re-run and compare outputs. Keep the best version and refine.</li>
+      </ol>
+
+      <h2>Common prompt mistakes and how to avoid them</h2>
+      <ul>
+        <li><strong>Vagueness:</strong> “Make something nice” → ask for “bold, minimal poster with two colors.”</li>
+        <li><strong>Overloading:</strong> Too many contradictory constraints confuse models. Prioritize top 3 constraints.</li>
+        <li><strong>No role set:</strong> Let the model know what hat it is wearing (designer, editor, composer).</li>
+        <li><strong>Neglecting examples:</strong> Small examples guide output style efficiently.</li>
+      </ul>
+
+      <h2>Advanced tips for power users</h2>
+      <p>Once you know the basics, level up with these advanced techniques:</p>
+      <ul>
+        <li><strong>Chain of thought prompts:</strong> Ask the model to explain steps before producing final output to reduce hallucination.</li>
+        <li><strong>Prompt chaining:</strong> Use one prompt to create structure, another to flesh it out, and a final one to polish.</li>
+        <li><strong>Use negative prompts (for images):</strong> explicitly list what to avoid (no watermark, no extra people).</li>
+        <li><strong>Temperature control:</strong> When supported, lower temperature for deterministic outputs, raise it for creative variations.</li>
+      </ul>
+
+      <h2>Workflow examples — a short routine</h2>
+      <p>Example 1: Image creator workflow</p>
+      <ol>
+        <li>Start with a compact image prompt (subject + style).</li>
+        <li>Generate 4 variations.</li>
+        <li>Pick the best and run a refine prompt adding micro-details.</li>
+        <li>Use a final prompt to create high-resolution export settings.</li>
+      </ol>
+
+      <p>Example 2: Content creation workflow</p>
+      <ol>
+        <li>Prompt: ask for an outline.</li>
+        <li>Prompt: expand each outline point into a paragraph.</li>
+        <li>Prompt: polish for tone, word count, and SEO keywords.</li>
+      </ol>
+
+      <h2>Ethics, copyright and AI-generated content</h2>
+      <p>When working with AI-generated outputs, be mindful of copyright and ethical considerations. If your prompt asks for “in the style of [living artist],” prefer neutral style descriptors or obtain permission. Also verify image rights when using generated results commercially.</p>
+
+      <h2>Final checklist — ready-to-use prompt checklist</h2>
+      <ul>
+        <li>Objective: Have I defined the exact output?</li>
+        <li>Role: Did I set the model’s role or perspective?</li>
+        <li>Style & tone: Have I specified the style and tone?</li>
+        <li>Constraints: Did I include required limitations (size, words, format)?</li>
+        <li>Example: Did I include an example if necessary?</li>
+        <li>Iteration plan: Am I ready to test, compare, and refine?</li>
+      </ul>
+
+      <div class="cta-links">
+        <p>If you found this helpful, explore related tutorials and guides:</p>
+        <div class="related" role="navigation" aria-label="Related posts">
+          <a href="/search/label/Prompt%20Templates">Prompt Templates</a>
+          <a href="/search/label/AI%20Image%20Tips">AI Image Tips</a>
+          <a href="/search/label/Workflow%20Guides">Workflow Guides</a>
+        </div>
+      </div>
+
+      <footer style="margin-top:20px;">
+        <p>Published by PROMPTIFICE • Mastering The Arts of Prompts</p>
+      </footer>
+    </article>
+  </main>
+
+</body>
+</html>
