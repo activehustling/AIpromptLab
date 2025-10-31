@@ -32,7 +32,8 @@ Free HTML CSS Template
                         navLinksContainer.classList.remove('active');
                     }
                 });
-            
+            });
+
             // Active menu highlighting
             const sections = document.querySelectorAll('section');
             const menuLinks = document.querySelectorAll('.nav-link');
@@ -125,6 +126,4 @@ Free HTML CSS Template
                     e.target.reset();
                 });
             }
-
         });
-
