@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "url": "https://promptifice.netlify.app/",
+      "updated": "2025-10-31",
+      "priority": 1.0,
+      "category": "home"
+    },
+    {
+      "url": "https://promptifice.netlify.app/About.html",
+      "updated": "2025-10-31",
+      "priority": 0.9,
+      "category": "about"
+    },
+    {
+      "url": "https://promptifice.netlify.app/Blog-Post-1.html",
+      "updated": "2025-10-31",
+      "priority": 0.8,
+      "category": "blog"
+    },
+    {
+      "url": "https://promptifice.netlify.app/Blog-Post-2.html",
+      "updated": "2025-10-31",
+      "priority": 0.8,
+      "category": "blog"
+    },
+    {
+      "url": "https://promptifice.netlify.app/Blog-Post-3.html",
+      "updated": "2025-10-31",
+      "priority": 0.8,
+      "category": "blog"
+    }
+  ],
+  "categories": [
+    "ai-prompts",
+    "ai-writing",
+    "ai-engineering",
+    "ai-art",
+    "ai-image-generation"
+  ],
+  "crawlFrequency": "daily"
+}
