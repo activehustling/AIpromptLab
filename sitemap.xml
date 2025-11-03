@@ -1,56 +1,68 @@
-new Crawler({
-  appId: "MFPEBUWDNP",
-  indexPrefix: "",
-  rateLimit: 8,
-  maxUrls: 100,
-  schedule: "on the 11 day of the month",
-  startUrls: ["https://promptifice.netlify.app"],
-  sitemaps: [],
-  saveBackup: false,
-  ignoreQueryParams: ["source", "utm_*"],
-  actions: [
-    {
-      indexName: "promptifice_articles",
-      pathsToMatch: ["https://promptifice.netlify.app/**"],
-      recordExtractor: ({ url, $, helpers }) => {
-        return helpers.article({ $, url });
-      },
-    },
-    {
-      indexName: "promptifice_pages",
-      pathsToMatch: ["https://promptifice.netlify.app/**"],
-      recordExtractor: ({ url, $, helpers, contentLength, fileType }) => {
-        return helpers.page({ $, url, contentLength, fileType });
-      },
-    },
-  ],
-  initialIndexSettings: {
-    promptifice_articles: {
-      distinct: true,
-      attributeForDistinct: "url",
-      searchableAttributes: [
-        "unordered(keywords)",
-        "unordered(title)",
-        "unordered(description)",
-        "url",
-      ],
-      customRanking: ["asc(depth)"],
-      attributesForFaceting: ["category"],
-    },
-    promptifice_pages: {
-      distinct: true,
-      attributeForDistinct: "url",
-      searchableAttributes: [
-        "unordered(keywords)",
-        "unordered(title)",
-        "unordered(description)",
-        "url",
-      ],
-      customRanking: ["asc(depth)"],
-      attributesForFaceting: ["category"],
-    },
-  },
-  apiKey: "2ae1121d6933616d6af57b7c09ff6f03",
-  extraUrls: ["https://promptifice.netlify.app/about"],
-});
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <url>
+    <loc>https://promptifice.netlify.app/</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://promptifice.netlify.app/About.html</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://promptifice.netlify.app/Blog-Post-1.html</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://promptifice.netlify.app/Blog-Post-2.html</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://promptifice.netlify.app/Blog-Post-3.html</loc>
+    <lastmod>2025-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Categories -->
+  <url>
+    <loc>https://promptifice.netlify.app/category/ai-prompts</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://promptifice.netlify.app/category/ai-writing</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://promptifice.netlify.app/category/ai-engineering</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://promptifice.netlify.app/category/ai-art</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://promptifice.netlify.app/category/ai-image-generation</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
