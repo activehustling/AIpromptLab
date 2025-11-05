@@ -143,6 +143,165 @@
             <a href="About.html" class="cta-button">About Us</a>
         </div>
     </section>
+<section id="ai-chat" class="chat-section">
+  <div class="chat-container">
+    <h2>Prompt Generator</h2>
+    <div class="chat-box" id="chatBox">
+      <div class="ai-message">👋 Hi there! Describe what you’d like to generate, and I’ll create the perfect AI prompt for you.</div>
+    </div>
+
+    <div class="chat-input">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Describe your image idea (e.g., A sunset over a mountain in anime style)..."
+      />
+      <button id="sendBtn">Send</button>
+    </div>
+
+    <p id="signinMsg" class="signin-warning"></p>
+  </div>
+</section>
+
+<style>
+  .chat-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f9fafb;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .chat-container {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+  .chat-container h2 {
+    text-align: center;
+    background: #004aad;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.3em;
+  }
+
+  .chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ai-message, .user-message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    line-height: 1.4;
+  }
+
+  .ai-message {
+    background: #e6f0ff;
+    color: #003366;
+    align-self: flex-start;
+  }
+
+  .user-message {
+    background: #d4f8d4;
+    color: #1a4a1a;
+    align-self: flex-end;
+  }
+
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: #fff;
+  }
+
+  .chat-input input {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
+
+  .chat-input input::placeholder {
+    opacity: 0.4;
+  }
+
+  .chat-input button {
+    background: #004aad;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .chat-input button:hover {
+    background: #003d8c;
+  }
+
+  .signin-warning {
+    text-align: center;
+    color: red;
+    font-size: 0.9em;
+    padding: 5px 0 15px;
+  }
+</style>
+
+<script>
+  let signedIn = false; // Set true after Google Sign-In success
+
+  document.getElementById("sendBtn").addEventListener("click", function () {
+    const userInput = document.getElementById("userInput").value.trim();
+    const chatBox = document.getElementById("chatBox");
+    const msg = document.getElementById("signinMsg");
+
+    if (!userInput) return;
+
+    // Display user's message
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user-message");
+    userDiv.textContent = userInput;
+    chatBox.appendChild(userDiv);
+
+    // Check if user signed in
+    if (!signedIn) {
+      msg.textContent = "Please sign in to continue.";
+      return;
+    }
+
+    msg.textContent = "";
+    // Fake AI typing animation
+    const aiDiv = document.createElement("div");
+    aiDiv.classList.add("ai-message");
+    aiDiv.textContent = "Thinking...";
+    chatBox.appendChild(aiDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Simulated AI response after 2 seconds
+    setTimeout(() => {
+      aiDiv.textContent = `Try this prompt: “A highly detailed ${userInput}, realistic lighting, 8k resolution.”`;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 2000);
+
+    document.getElementById("userInput").value = "";
+  });
+</script>
 
     <!-- About Section - Complete Redesign -->
     <section id="about">
@@ -667,6 +826,7 @@ experiment with phrases before sending them to AI generators. They’re perfect 
 </body>
 
 </html>
+
 
 
 
