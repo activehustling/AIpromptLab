@@ -35,7 +35,9 @@
 </script>    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3257971144001591"
      crossorigin="anonymous"></script>
-    
+    <!-- Google Sign-In SDK -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
 <body>
     <div class="geometric-bg"></div>
@@ -72,6 +74,25 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
+        <!-- Google Sign-In Button -->
+<div 
+  id="g_id_onload"
+  data-client_id="759171955351-6hh1q0ou7hvil99crihotmptjrqhgtms.apps.googleusercontent.com"
+  data-login_uri="https://promptifice.netlify.app/oauth2callback"
+  data-auto_prompt="true"
+  data-auto_select="true">
+</div>
+
+<div 
+  class="g_id_signin"
+  data-type="standard"
+  data-shape="rectangular"
+  data-theme="outline"
+  data-text="signin_with"
+  data-size="large"
+  data-logo_alignment="left">
+</div>
+
     </header>
 
     <!-- Hero Section with Enhanced Background -->
@@ -616,9 +637,37 @@ experiment with phrases before sending them to AI generators. They’re perfect 
         </div>
     </footer>
 <script src="tooplate-inner-peace-scripts.js"></script>
+<script>
+  function handleCredentialResponse(response) {
+    const data = jwt_decode(response.credential);
+    console.log("User Info:", data);
+
+    // Example: Show the user name on your page
+    document.getElementById("userName").innerText = `Welcome, ${data.name}!`;
+  }
+
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "759171955351-6hh1q0ou7hvil99crihotmptjrqhgtms.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.querySelector(".g_id_signin"),
+      { theme: "outline", size: "large" }
+    );
+  };
+</script>
+
+<!-- To decode the JWT (token) -->
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+<!-- Add a user display element -->
+<p id="userName" style="text-align:center; font-weight:bold;"></p>
+    
 </body>
 
 </html>
+
 
 
 
